@@ -61,9 +61,9 @@ Use the inning function below to do the following:
   For example: invoking inning() should return a numerical score value of 0, 1, or 2
 */
 
-function inning(/*Code Here*/){
+function inning(){
 
-    /*Code Here*/
+    return Math.floor(math.random()*3);
 
 }
 
@@ -80,10 +80,16 @@ For example: invoking finalScore(inning, 9) might return this object:
 }
 */ 
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+function finalScore(inningCB, numInning){
+  let score = {
+    Home: 0,
+    Away: 0
+  }
+for(let i =0; i < numInning; i++){
+  score.Home += inningCB();
+  score.Away += inningCB();
+}
+return score;
 }
 
 /* Task 4: 
